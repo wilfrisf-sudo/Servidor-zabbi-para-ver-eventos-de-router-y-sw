@@ -244,12 +244,11 @@ Tecnologías y herramientas utilizadas
 
 Licencia
 --------
-MIT License — uso, copia y modificación permitidos. (Archivo LICENSE sugerido en el repo.)
+MIT License — uso, copia y modificación permitidos.
 
 Autor
 -----
-Autor: Matrícula 2364  
-Contacto: (añadir email si se desea)
+Autor: Wilfri Solano Frias Matrícula 2024-2364  
 
 Registro de cambios / Notas finales
 -----------------------------------
