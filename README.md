@@ -6,7 +6,6 @@ Este repositorio documenta un laboratorio de Seguridad Informática para monitor
 
 Diagrama de topología
 ---------------------
-Mermaid (si tu visor lo soporta):
 
 ```mermaid
 graph LR
@@ -15,20 +14,6 @@ graph LR
   S1 --- ZBX[Servidor Zabbix<br>10.23.64.10]
   subgraph LAN [10.23.64.0/24]
   end
-```
-
-Diagrama ASCII alternativo:
-
-```
-           [R1] Fa0/0 10.23.64.1
-             |
-           e0|
-         +---+--------------------+
-         |        Switch S1       |
-         | VLAN1: 10.23.64.2/24   |
-         |  e1 ---> W10 (DHCP)    |
-         |  e2 ---> Zabbix (10.23.64.10)
-         +------------------------+
 ```
 
 Tabla de direccionamiento IP
