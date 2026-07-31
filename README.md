@@ -21,10 +21,10 @@ Tabla de direccionamiento IP
 
 | Dispositivo       | Interfaz / Rol         | IP / Máscara        | Notas                                  |
 |-------------------|------------------------|---------------------|----------------------------------------|
-| R1 (Router)       | Fa0/0 (gateway/DHCP)   | 10.23.64.1 /24      | Servidor DHCP, SNMPv2c RO: LABRO2364  |
+| R1 (Router)       | GI0/0 (gateway/DHCP)   | 10.23.64.1 /24      | Servidor DHCP, SNMPv2c RO: LABRO2364  |
 | S1 (Switch)       | VLAN1 (SVI gestión)    | 10.23.64.2 /24      | SNMPv2c RO: LABRO2364                  |
-| Servidor Zabbix   | e2                     | 10.23.64.10 /24     | IP estática; recibe traps SNMP        |
-| W10 (Windows)     | e1 (cliente DHCP)      | 10.23.64.11–254 (DHCP)| Rango dinámico por DHCP               |
+| Servidor Zabbix   | Eth2                     | 10.23.64.10 /24     | IP estática; recibe traps SNMP        |
+| W10 (Windows)     | Eth1 (cliente DHCP)      | 10.23.64.11–254 (DHCP)| Rango dinámico por DHCP               |
 | DHCP pool excluido| —                      | 10.23.64.1–10       | Reservado para R1, S1 y Zabbix        |
 
 Objetivo del laboratorio
@@ -37,7 +37,7 @@ Copiar/pegar en la sesión de configuración del router:
 
 ```text
 ! Interfaz y dirección
-interface FastEthernet0/0
+interface GigabitEthernet 0/0
  ip address 10.23.64.1 255.255.255.0
  no shutdown
 
@@ -77,11 +77,11 @@ interface Vlan1
 ip default-gateway 10.23.64.1
 
 ! Asignar puertos en modo access (ejemplo)
-interface range Ethernet0/1
+interface Ethernet 0/1
  switchport mode access
  switchport access vlan 1
 !
-interface range Ethernet0/2
+interface Ethernet 0/2
  switchport mode access
  switchport access vlan 1
 
